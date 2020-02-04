@@ -1,0 +1,34 @@
+{
+  "name": "packages",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A collection of tools.",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "bootstrap:production": "lerna bootstrap -- --production",
+    "clean": "lerna clean --yes",
+    "dev": "lerna run dev --scope=@blog/server --stream",
+    "build": "lerna run build --stream",
+    "start": "lerna run start --scope=@blog/server --stream",
+    "format": "prettier --write \"packages/**/*.@(ts|js|vue)\"",
+    "lint": "eslint . --ext .ts,.js,.vue"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shalldie/packages.git"
+  },
+  "author": "shalldie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shalldie/packages/issues"
+  },
+  "homepage": "https://github.com/shalldie/packages#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5"
+  }
+}

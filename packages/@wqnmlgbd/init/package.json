@@ -1,0 +1,27 @@
+{
+  "name": "@wqnmlgbd/init",
+  "version": "0.0.1",
+  "description": "Init some config or project.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "rimraf dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shalldie/packages.git"
+  },
+  "keywords": [
+    "init"
+  ],
+  "author": "shalldie",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^7.0.4"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.1",
+    "typescript": "^3.7.5"
+  }
+}
