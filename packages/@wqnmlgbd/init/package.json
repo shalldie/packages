@@ -4,7 +4,8 @@
   "description": "Init some config or project.",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc -w",
+    "start": "node dist/index.js",
+    "dev": "rimraf dist && tsc -w",
     "build": "rimraf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +19,14 @@
   "author": "shalldie",
   "license": "MIT",
   "dependencies": {
+    "consola": "^2.11.3",
+    "deepmerge": "^4.2.2",
+    "fs-extra": "^8.1.0",
     "inquirer": "^7.0.4"
   },
   "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
+    "@types/inquirer": "^6.5.0",
     "rimraf": "^3.0.1",
     "typescript": "^3.7.5"
   }

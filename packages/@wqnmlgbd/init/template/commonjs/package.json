@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "x-dev": "rimraf dist && tsc -w",
+        "x-build": "rimraf dist && tsc"
+    },
+    "devDependencies": {
+        "rimraf": "^3.0.1",
+        "typescript": "^3.7.5"
+    }
+}

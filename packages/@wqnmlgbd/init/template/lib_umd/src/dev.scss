@@ -1,0 +1,15 @@
+.page {
+    position: relative;
+    width: 1200px;
+    // min-height: 200px;
+    margin: 50px auto;
+    border: 1px solid #eee;
+    // background: #eee;
+    box-shadow: 0 0 4px #eee;
+
+    // 推荐系统
+    .rec-normal {
+        width: 960px;
+        height: 320px;
+    }
+}
