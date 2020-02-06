@@ -49,8 +49,8 @@ export default class Generator {
             return;
         }
 
-        const srcPkg = require(srcPkgPath); // eslint-disable-line
-        const destPkg = require(destPkgPath); // eslint-disable-line
+        const srcPkg = JSON.parse(await fse.readFile(srcPkgPath, 'utf-8'));
+        const destPkg = JSON.parse(await fse.readFile(destPkgPath, 'utf-8'));
 
         const pkg = deepmerge(destPkg, srcPkg);
         await fse.writeFile(destPkgPath, JSON.stringify(pkg, null, '  '), 'utf-8');

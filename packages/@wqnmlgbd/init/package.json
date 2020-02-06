@@ -1,6 +1,6 @@
 {
   "name": "@wqnmlgbd/init",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Init some config or project.",
   "main": "index.js",
   "bin": {
@@ -40,5 +40,5 @@
     "rimraf": "^3.0.1",
     "typescript": "^3.7.5"
   },
-  "gitHead": "40000a97ca68add6e58f840e3f4a1f3b3e0b6dbd"
+  "gitHead": "b55e92b12382f0dd81538ac53295b23f8e9cc368"
 }
