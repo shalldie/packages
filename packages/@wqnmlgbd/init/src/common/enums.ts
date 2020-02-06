@@ -13,7 +13,7 @@ export const EProjectType = enumFactory({
  */
 export const EFormatType = enumFactory({
     NONE: { value: 'NONE', name: 'none' },
-    PRETTIER: { value: 'PRETTIER', name: 'prettier' }
+    PRETTIER: { value: 'PRETTIER', name: 'prettier', tpl: 'format_prettier' }
 } as const);
 
 /**
@@ -21,5 +21,13 @@ export const EFormatType = enumFactory({
  */
 export const ELintType = enumFactory({
     NONE: { value: 'NONE', name: 'none' },
-    ESLINT_FOR_TS: { value: 'ESLINT_FOR_TS', name: 'eslint for typescript' }
+    ESLINT_FOR_TS: { value: 'ESLINT_FOR_TS', name: 'eslint for typescript', tpl: 'eslint_for_ts' }
 } as const);
+
+/**
+ * registry 仓库
+ */
+export const ERegistryType = enumFactory({
+    NONE: { value: 'NONE', name: 'none' },
+    TAOBAO: { value: 'https://registry.npm.taobao.org/', name: 'taobao ----- https://registry.npm.taobao.org/' }
+});

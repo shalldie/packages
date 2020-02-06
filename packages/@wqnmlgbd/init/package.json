@@ -3,11 +3,21 @@
   "version": "0.0.1",
   "description": "Init some config or project.",
   "main": "index.js",
+  "bin": {
+    "init": "dist/index.js"
+  },
   "scripts": {
     "start": "node dist/index.js",
     "dev": "rimraf dist && tsc -w",
     "build": "rimraf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist",
+    "template"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -29,5 +39,6 @@
     "@types/inquirer": "^6.5.0",
     "rimraf": "^3.0.1",
     "typescript": "^3.7.5"
-  }
+  },
+  "gitHead": "40000a97ca68add6e58f840e3f4a1f3b3e0b6dbd"
 }

@@ -12,9 +12,9 @@ export default class Generator {
         this.tplDir = tplDir;
     }
 
-    public static load(tplDir: string) {
+    public static async load(tplDir: string) {
         const instance = new Generator(tplDir);
-        instance.initialize();
+        await instance.initialize();
     }
 
     public async initialize() {
@@ -32,13 +32,14 @@ export default class Generator {
 
         for (const file of files) {
             if (file === PKG_NAME) {
-                this.extendPkg();
+                await this.extendPkg();
                 continue;
             }
 
             await fse.copy(path.join(this.tplDir, file), path.join(process.cwd(), file));
             consola.info(`...generate ${file}`);
         }
+        consola.ready(`ready ......done ${path.basename(this.tplDir)}`);
     }
 
     private async extendPkg() {
