@@ -3,8 +3,6 @@ import consola from 'consola';
 import path from 'path';
 import deepmerge from 'deepmerge';
 
-const PKG_NAME = 'package.json';
-
 export default class Generator {
     private tplDir!: string;
 
@@ -18,42 +16,54 @@ export default class Generator {
     }
 
     public async initialize() {
-        await this.copyTemplate();
-    }
-
-    /**
-     * 复制静态文件模板
-     *
-     * @private
-     * @memberof Generator
-     */
-    private async copyTemplate() {
-        const files = await fse.readdir(this.tplDir);
-
-        for (const file of files) {
-            if (file === PKG_NAME) {
-                await this.extendPkg();
-                continue;
-            }
-
-            await fse.copy(path.join(this.tplDir, file), path.join(process.cwd(), file));
-            consola.info(`...generate ${file}`);
+        const files = await this.getAllFiles();
+        for (const srcPath of files) {
+            const relativePath = path.relative(this.tplDir, srcPath);
+            const destPath = path.join(process.cwd(), relativePath);
+            await this.copyFile(srcPath, destPath);
         }
         consola.ready(`ready ......done ${path.basename(this.tplDir)}`);
     }
 
-    private async extendPkg() {
-        const srcPkgPath = path.join(this.tplDir, PKG_NAME);
-        const destPkgPath = path.join(process.cwd(), PKG_NAME);
-        if (!fse.existsSync(srcPkgPath) || !fse.existsSync(destPkgPath)) {
-            return;
+    private async getAllFiles(dir: string = this.tplDir): Promise<string[]> {
+        const list: string[] = [];
+        const files = await fse.readdir(dir);
+
+        for (const file of files) {
+            const fullPath = path.join(dir, file);
+            if (fse.statSync(fullPath).isDirectory()) {
+                list.push(...(await this.getAllFiles(fullPath)));
+                continue;
+            }
+            list.push(fullPath);
         }
 
-        const srcPkg = JSON.parse(await fse.readFile(srcPkgPath, 'utf-8'));
-        const destPkg = JSON.parse(await fse.readFile(destPkgPath, 'utf-8'));
+        return list;
+    }
 
-        const pkg = deepmerge(destPkg, srcPkg);
-        await fse.writeFile(destPkgPath, JSON.stringify(pkg, null, '  '), 'utf-8');
-        consola.info(`...extend ${PKG_NAME}`);
+    private async copyFile(src: string, dest: string) {
+        if (fse.existsSync(dest) && !fse.statSync(dest).isDirectory()) {
+            await this.extendFile(src, dest);
+            return;
+        }
+        await fse.copy(src, dest);
+        consola.info(`...generate ${path.basename(dest)}`);
+    }
+
+    private async extendFile(src: string, dest: string) {
+        try {
+            if (!fse.existsSync(src) || !fse.existsSync(dest)) {
+                return;
+            }
+
+            const srcJSON = JSON.parse(await fse.readFile(src, 'utf-8'));
+            const destJSON = JSON.parse(await fse.readFile(dest, 'utf-8'));
+
+            const pkg = deepmerge(destJSON, srcJSON);
+            await fse.writeFile(dest, JSON.stringify(pkg, null, '  '), 'utf-8');
+            consola.info(`...extend ${dest}`);
+        } catch (ex) {
+            consola.warn(`...ignore ${dest}`);
+        }
     }
 }

@@ -29,5 +29,7 @@ export const ELintType = enumFactory({
  */
 export const ERegistryType = enumFactory({
     NONE: { value: 'NONE', name: 'none' },
+    NPM: { value: 'https://registry.npmjs.org/', name: 'npm -------- https://registry.npmjs.org/' },
+    YARN: { value: 'https://registry.yarnpkg.com/', name: 'yarn ------- https://registry.yarnpkg.com/' },
     TAOBAO: { value: 'https://registry.npm.taobao.org/', name: 'taobao ----- https://registry.npm.taobao.org/' }
 });
