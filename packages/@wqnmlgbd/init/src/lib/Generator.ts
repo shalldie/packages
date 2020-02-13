@@ -22,7 +22,7 @@ export default class Generator {
             const destPath = path.join(process.cwd(), relativePath);
             await this.copyFile(srcPath, destPath);
         }
-        consola.ready(`ready ......done ${path.basename(this.tplDir)}`);
+        consola.ready(`ready ......done 【${path.basename(this.tplDir)}】`);
     }
 
     private async getAllFiles(dir: string = this.tplDir): Promise<string[]> {
@@ -47,7 +47,7 @@ export default class Generator {
             return;
         }
         await fse.copy(src, dest);
-        consola.info(`...generate ${path.basename(dest)}`);
+        consola.info(`...generate 【${path.basename(dest)}】`);
     }
 
     private async extendFile(src: string, dest: string) {
@@ -61,9 +61,9 @@ export default class Generator {
 
             const pkg = deepmerge(destJSON, srcJSON);
             await fse.writeFile(dest, JSON.stringify(pkg, null, '  '), 'utf-8');
-            consola.info(`...extend ${dest}`);
+            consola.info(`...extend 【${path.basename(dest)}】`);
         } catch (ex) {
-            consola.warn(`...ignore ${dest}`);
+            consola.warn(`...ignore 【${path.basename(dest)}】`);
         }
     }
 }

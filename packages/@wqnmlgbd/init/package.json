@@ -1,6 +1,6 @@
 {
   "name": "@wqnmlgbd/init",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Init some config or project.",
   "main": "index.js",
   "bin": {
