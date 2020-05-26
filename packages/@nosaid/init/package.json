@@ -1,6 +1,6 @@
 {
   "name": "@nosaid/init",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Init some config or project.",
   "main": "index.js",
   "bin": {
@@ -39,5 +39,6 @@
     "@types/inquirer": "^6.5.0",
     "rimraf": "^3.0.1",
     "typescript": "^3.9.3"
-  }
+  },
+  "gitHead": "bc6373c173ee07daf0ddd3fe7d82b0745b0762d3"
 }

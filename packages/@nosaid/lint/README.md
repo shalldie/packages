@@ -8,7 +8,6 @@ Easy to lint, for typescript
 
 ## Usage
 
-
     & vim .eslintrc.js
 
 ```js
@@ -25,13 +24,13 @@ module.exports = {
 
 ```json
 {
-  "singleQuote": true,
-  "trailingComma": "none",
-  "tabWidth": 4,
-  "endOfLine": "auto",
-  "printWidth": 120,
-  "bracketSpacing": false,
-  "arrowParens": "avoid"
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "endOfLine": "auto",
+    "printWidth": 120,
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
 }
 ```
 

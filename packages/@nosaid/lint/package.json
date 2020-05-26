@@ -1,6 +1,6 @@
 {
   "name": "@nosaid/eslint-config-for-typescript",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Easy to lint for typescript",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,9 @@
     "url": "https://github.com/shalldie/packages/issues"
   },
   "homepage": "https://github.com/shalldie/packages#readme",
+  "peerDependencies": {
+    "typescript": "*"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^3.0.1",
     "@typescript-eslint/parser": "^3.0.1",
@@ -32,5 +35,6 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
     "prettier": "^2.0.5"
-  }
+  },
+  "gitHead": "bc6373c173ee07daf0ddd3fe7d82b0745b0762d3"
 }

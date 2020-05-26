@@ -10,7 +10,7 @@
     "build": "lerna run build --stream",
     "format": "prettier --write \"packages/**/*.@(ts|js|vue)\"",
     "lint": "eslint . --ext .ts,.js,.vue",
-    "lp": "lerna publish --amend"
+    "lp": "lerna publish --amend --no-push"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,8 @@
   },
   "homepage": "https://github.com/shalldie/packages#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.19.0",
-    "@typescript-eslint/parser": "^2.19.0",
-    "eslint": "^6.8.0",
-    "lerna": "^3.20.2",
-    "prettier": "^2.0.5",
+    "@nosaid/eslint-config-for-typescript": "0.0.3",
+    "lerna": "^3.22.0",
     "typescript": "^3.9.3"
   }
 }
