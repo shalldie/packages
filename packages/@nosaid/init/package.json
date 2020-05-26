@@ -1,5 +1,5 @@
 {
-  "name": "@wqnmlgbd/init",
+  "name": "@nosaid/init",
   "version": "0.0.4",
   "description": "Init some config or project.",
   "main": "index.js",
@@ -38,7 +38,7 @@
     "@types/fs-extra": "^8.0.1",
     "@types/inquirer": "^6.5.0",
     "rimraf": "^3.0.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.9.3"
   },
-  "gitHead": "b55e92b12382f0dd81538ac53295b23f8e9cc368"
+  "gitHead": "bc6373c173ee07daf0ddd3fe7d82b0745b0762d3"
 }

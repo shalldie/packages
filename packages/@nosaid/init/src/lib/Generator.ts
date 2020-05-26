@@ -10,12 +10,12 @@ export default class Generator {
         this.tplDir = tplDir;
     }
 
-    public static async load(tplDir: string) {
+    public static async load(tplDir: string): Promise<void> {
         const instance = new Generator(tplDir);
         await instance.initialize();
     }
 
-    public async initialize() {
+    public async initialize(): Promise<void> {
         const files = await this.getAllFiles();
         for (const srcPath of files) {
             const relativePath = path.relative(this.tplDir, srcPath);
