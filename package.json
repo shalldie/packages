@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/shalldie/packages#readme",
   "devDependencies": {
-    "@nosaid/eslint-config-for-typescript": "0.0.3",
+    "@nosaid/eslint-config-for-typescript": "0.0.4",
     "lerna": "^3.22.0",
     "typescript": "^3.9.3"
   }
