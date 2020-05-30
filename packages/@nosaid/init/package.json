@@ -1,6 +1,6 @@
 {
   "name": "@nosaid/init",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Init some config or project.",
   "main": "index.js",
   "bin": {

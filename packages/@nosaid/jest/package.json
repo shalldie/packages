@@ -1,0 +1,26 @@
+{
+  "name": "@nosaid/jest",
+  "version": "0.0.2",
+  "description": "bundle jest and typescript config.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "keywords": [
+    "jest",
+    "ts-jest"
+  ],
+  "author": "shalldie",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.5.4",
+    "ts-jest": "^25.5.0"
+  }
+}
