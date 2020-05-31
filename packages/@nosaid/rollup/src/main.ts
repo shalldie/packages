@@ -46,6 +46,11 @@ export function rollupGenerator(options: RollupOption[]) {
                     babelrc: false,
                     babelHelpers: 'bundled',
                     presets: [tsPreset, envPreset].filter(n => !!n),
+                    plugins: [
+                        '@babel/plugin-proposal-object-rest-spread',
+                        ['@babel/plugin-proposal-decorators', { legacy: true }],
+                        ['@babel/plugin-proposal-class-properties', { loose: true }]
+                    ],
                     include: ['src/**'],
                     extensions: [...DEFAULT_EXTENSIONS, 'ts']
                 }),

@@ -1,6 +1,6 @@
 {
   "name": "@nosaid/rollup",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "bundle for rollup",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -28,6 +28,9 @@
   },
   "dependencies": {
     "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-typescript": "^7.10.1",
     "@rollup/plugin-babel": "^5.0.2",
