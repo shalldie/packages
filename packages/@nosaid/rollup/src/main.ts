@@ -1,9 +1,10 @@
 import { DEFAULT_EXTENSIONS } from '@babel/core';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import babel from '@rollup/plugin-babel';
-import { uglify } from 'rollup-plugin-uglify';
+import resolvePlugin from '@rollup/plugin-node-resolve';
+import commonjsPlugin from '@rollup/plugin-commonjs';
+import babelPlugin from '@rollup/plugin-babel';
+import { uglify as uglifyPlugin } from 'rollup-plugin-uglify';
 import RollupOption from './RollupOption';
+import typescriptPlugin from 'rollup-plugin-typescript2';
 
 /**
  * 配置生成器
@@ -13,48 +14,41 @@ import RollupOption from './RollupOption';
  * @returns
  */
 export function rollupGenerator(options: RollupOption[]) {
-    return options.map(({ input, output, typescript, polyfill, uglify: ifUglify }) => {
-        const tsPreset = typescript
-            ? [
-                  '@babel/preset-typescript',
-                  {
-                      allExtensions: true
-                  }
-              ]
-            : null;
-
-        const envPreset = [
-            '@babel/preset-env',
-            polyfill
-                ? {
-                      useBuiltIns: 'usage',
-                      modules: false,
-                      corejs: 3
-                  }
-                : {}
-        ];
-
-        const uglifyPlugin = ifUglify ? uglify() : null;
-
+    return options.map(({ input, output, typescript, polyfill, uglify }) => {
         return {
             input,
             output,
             plugins: [
-                resolve(),
-                commonjs(),
-                babel({
+                resolvePlugin(),
+                commonjsPlugin(),
+                typescriptPlugin(),
+                babelPlugin({
                     babelrc: false,
                     babelHelpers: 'bundled',
-                    presets: [tsPreset, envPreset].filter(n => !!n),
-                    plugins: [
-                        '@babel/plugin-proposal-object-rest-spread',
-                        ['@babel/plugin-proposal-decorators', { legacy: true }],
-                        ['@babel/plugin-proposal-class-properties', { loose: true }]
+                    presets: [
+                        [
+                            '@babel/preset-env',
+                            polyfill
+                                ? {
+                                      useBuiltIns: 'usage',
+                                      modules: false,
+                                      corejs: 3
+                                  }
+                                : {}
+                        ]
                     ],
+                    plugins: typescript
+                        ? []
+                        : [
+                              '@babel/plugin-proposal-object-rest-spread',
+                              ['@babel/plugin-proposal-decorators', { legacy: true }],
+                              ['@babel/plugin-proposal-class-properties', { loose: true }]
+                          ],
                     include: ['src/**'],
                     extensions: [...DEFAULT_EXTENSIONS, 'ts']
                 }),
-                uglifyPlugin
+                // 压缩代码
+                uglify ? uglifyPlugin() : null
             ].filter(n => !!n)
         };
     });
