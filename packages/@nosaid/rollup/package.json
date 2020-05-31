@@ -1,0 +1,40 @@
+{
+  "name": "@nosaid/rollup",
+  "version": "0.0.2",
+  "description": "bundle for rollup",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "test": "echo \"@nosaid/rollup's test is ojbk\" && exit 0",
+    "build": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "keywords": [
+    "rollup",
+    "bundle"
+  ],
+  "author": "shalldie",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": "*"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@rollup/plugin-babel": "^5.0.2",
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "core-js": "^3.6.5",
+    "rollup": "^2.11.2",
+    "rollup-plugin-uglify": "^6.0.4"
+  }
+}

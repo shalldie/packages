@@ -1,4 +1,6 @@
 module.exports = {
     extends: '@nosaid/eslint-config-for-typescript',
-    rules: {}
+    rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off'
+    }
 };
