@@ -7,6 +7,7 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
     "dev": "lerna run dev --scope=@blog/server --stream",
+    "test": "lerna run test --stream",
     "build": "lerna run build --stream",
     "format": "prettier --write \"packages/**/*.@(ts|js|vue)\"",
     "lint": "eslint . --ext .ts,.js,.vue",

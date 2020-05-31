@@ -1,6 +1,6 @@
 {
   "name": "@nosaid/init",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Init some config or project.",
   "main": "index.js",
   "bin": {
@@ -10,7 +10,7 @@
     "start": "node dist/index.js",
     "dev": "rimraf dist && tsc -w",
     "build": "rimraf dist && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"@nosaid/init is ojbk\" && exit 0"
   },
   "files": [
     "dist",
