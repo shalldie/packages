@@ -11,7 +11,7 @@
     "build": "lerna run build --stream",
     "format": "prettier --write \"packages/**/*.@(ts|js|vue)\"",
     "lint": "eslint . --ext .ts,.js,.vue",
-    "lp": "lerna publish --amend --no-push"
+    "lp": "lerna publish"
   },
   "repository": {
     "type": "git",
