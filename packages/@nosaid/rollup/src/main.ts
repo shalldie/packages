@@ -4,7 +4,6 @@ import commonjsPlugin from '@rollup/plugin-commonjs';
 import babelPlugin from '@rollup/plugin-babel';
 import { uglify as uglifyPlugin } from 'rollup-plugin-uglify';
 import RollupOption from './RollupOption';
-import typescriptPlugin from 'rollup-plugin-typescript2';
 
 /**
  * 配置生成器
@@ -21,7 +20,8 @@ export function rollupGenerator(options: RollupOption[]) {
             plugins: [
                 resolvePlugin(),
                 commonjsPlugin(),
-                typescriptPlugin(),
+                // eslint-disable-next-line
+                typescript ? require('rollup-plugin-typescript2')() : null,
                 babelPlugin({
                     babelrc: false,
                     babelHelpers: 'bundled',

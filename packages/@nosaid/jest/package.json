@@ -1,6 +1,6 @@
 {
   "name": "@nosaid/jest",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "bundle jest and typescript config.",
   "main": "index.js",
   "scripts": {
