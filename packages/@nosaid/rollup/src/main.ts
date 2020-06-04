@@ -25,7 +25,7 @@ export function rollupGenerator(options: RollupOption[]) {
         const useTypescript = /\.ts$/.test(input);
 
         // serve 的参数需要传入 contentBase
-        if (typeof serve === 'object') {
+        if (serve != null && typeof serve === 'object') {
             serve = {
                 contentBase: [],
                 ...serve
