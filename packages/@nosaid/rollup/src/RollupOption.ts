@@ -78,6 +78,7 @@ export default class RollupOption {
                * @type {number}
                */
               port?: number;
+              [key: string]: any;
           };
     /**
      * typescript 的额外配置

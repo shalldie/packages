@@ -24,6 +24,14 @@ export function rollupGenerator(options: RollupOption[]) {
     return options.map(({ input, output, serve, typescript, polyfill, uglify, postcssExtract }) => {
         const useTypescript = /\.ts$/.test(input);
 
+        // serve 的参数需要传入 contentBase
+        if (typeof serve === 'object') {
+            serve = {
+                contentBase: [],
+                ...serve
+            };
+        }
+
         return {
             input,
             output,
