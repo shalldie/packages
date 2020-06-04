@@ -22,15 +22,16 @@ import { rollupGenerator } from '@nosaid/rollup';
 
 export default rollupGenerator([
     {
-        input: 'src/main.js',         // 入口文件
+        input: 'src/main.js',        // 入口文件，支持 `js|ts` 文件
         output: {
-            name: 'LibUMD',           // library 名称
-            file: 'dist/lib-umd.js',  // 产出文件名
-            format: 'umd'             // umd 格式
+            name: 'LibUMD',          // library 名称
+            file: 'dist/lib-umd.js', // 产出文件名
+            format: 'umd'            // umd 格式
         },
-        typescript: false,            // 是否使用 typescript，默认 false
-        polyfill: false,              // 是否需要 polyfill，默认 false
-        uglify: false                 // 是否需要压缩，默认 false
+        typescript: {},              // 可选，额外的 typescript 配置： https://www.npmjs.com/package/rollup-plugin-typescript2
+        polyfill: false,             // 可选，是否需要 polyfill，默认 false
+        uglify: false,               // 可选，是否需要压缩，默认 false
+        postcssExtract: false        // 可选，`boolean|string`，css 是否需要 extract，默认 false
     },
     ...
 ]);
@@ -44,7 +45,20 @@ export default rollupGenerator([
 {
     "scripts": {
         ...,
+        "dev": "rollup -c -w",
         "build": "rollup -c"
     }
 }
+```
+
+```shell
+# 如果有css，且需要使用 autoprefixer 转化
+# 默认支持 `scss`、`postcss`，如果需要其它包可以直接安装，比如 `npm i less --save-dev`
+$ vim .browserslistrc
+```
+
+```shell
+last 2 version
+> 1%
+IE 10
 ```

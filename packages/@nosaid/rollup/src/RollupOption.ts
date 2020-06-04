@@ -25,40 +25,55 @@ export default class RollupOption {
      */
     output!: {
         /**
-         * library 名称
-         *
-         * @type {string}
-         */
-        name: string;
-        /**
          * 产出文件名
          *
          * @type {string}
          */
         file: string;
         /**
-         * 默认 umd 格式
+         * 输出的模块类型
          *
-         * @type {'umd'}
+         * @type {('umd' | 'cjs' | 'esm' | 'amd' | 'iife')}
          */
-        format: 'umd';
+        format: 'umd' | 'cjs' | 'esm' | 'amd' | 'iife';
+        /**
+         * library 名称，如果 `format: 'umd'` 的时候用到
+         *
+         * @type {string}
+         */
+        name?: string;
     };
     /**
-     * 是否使用 typescript
+     * typescript 的额外配置
+     *
+     * https://www.npmjs.com/package/rollup-plugin-typescript2
      *
      * @memberof RollupOption
      */
-    typescript? = false;
+    typescript?: any;
     /**
      * 是否需要 polyfill
      *
+     * @type {boolean}
      * @memberof RollupOption
      */
-    polyfill? = false;
+    polyfill?: boolean;
     /**
      * 是否压缩
      *
+     * @type {boolean}
      * @memberof RollupOption
      */
-    uglify? = false;
+    uglify?: boolean;
+    /**
+     * css 文件是否 extract
+     *
+     * `false`：不 extract；
+     * `true`： extract，默认和 output.file 同名
+     * `string`：自定义 extract 名称
+     *
+     * @type {(boolean | string)}
+     * @memberof RollupOption
+     */
+    postcssExtract?: boolean | string;
 }
