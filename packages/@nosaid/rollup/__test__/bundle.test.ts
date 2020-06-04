@@ -25,6 +25,10 @@ const configList = rollupGenerator([
     }
 ]);
 
+configList.forEach(conf => {
+    conf.plugins = conf.plugins.filter(n => n.name !== 'filesize');
+});
+
 describe('test bundle', () => {
     test('bundle javascript file', async () => {
         const config = configList[0];

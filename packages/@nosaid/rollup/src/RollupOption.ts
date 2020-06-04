@@ -43,6 +43,42 @@ export default class RollupOption {
          */
         name?: string;
     };
+
+    /**
+     * 配置开发服务器
+     *
+     * https://www.npmjs.com/package/rollup-plugin-serve
+     *
+     * @memberof RollupOption
+     */
+    serve?:
+        | string
+        | {
+              /**
+               * 自动打开
+               *
+               * @type {boolean}
+               */
+              open?: boolean;
+              /**
+               * 默认打开哪个页面，比如： '/home/about'
+               *
+               * @type {string}
+               */
+              openPage?: string;
+              /**
+               * 自定义 host
+               *
+               * @type {string}
+               */
+              host?: string;
+              /**
+               * 自定义端口
+               *
+               * @type {number}
+               */
+              port?: number;
+          };
     /**
      * typescript 的额外配置
      *

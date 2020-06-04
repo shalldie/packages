@@ -1,11 +1,16 @@
-import { DEFAULT_EXTENSIONS } from '@babel/core';
 import resolvePlugin from '@rollup/plugin-node-resolve';
 import commonjsPlugin from '@rollup/plugin-commonjs';
 import babelPlugin from '@rollup/plugin-babel';
-import { uglify as uglifyPlugin } from 'rollup-plugin-uglify';
 import jsonPlugin from '@rollup/plugin-json';
+
+import { uglify as uglifyPlugin } from 'rollup-plugin-uglify';
+import servePlugin from 'rollup-plugin-serve';
+import filesizePlugin from 'rollup-plugin-filesize';
+
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 import postcssPlugin from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
+
 import RollupOption from './RollupOption';
 
 /**
@@ -16,7 +21,7 @@ import RollupOption from './RollupOption';
  * @returns
  */
 export function rollupGenerator(options: RollupOption[]) {
-    return options.map(({ input, output, typescript, polyfill, uglify, postcssExtract }) => {
+    return options.map(({ input, output, serve, typescript, polyfill, uglify, postcssExtract }) => {
         const useTypescript = /\.ts$/.test(input);
 
         return {
@@ -31,6 +36,7 @@ export function rollupGenerator(options: RollupOption[]) {
                     minimize: true,
                     plugins: [autoprefixer]
                 }),
+                serve != null ? servePlugin(serve) : null,
                 // eslint-disable-next-line
                 useTypescript ? require('rollup-plugin-typescript2')(typescript || {}) : null,
                 babelPlugin({
@@ -59,7 +65,8 @@ export function rollupGenerator(options: RollupOption[]) {
                     extensions: [...DEFAULT_EXTENSIONS, 'ts']
                 }),
                 // 压缩代码
-                uglify ? uglifyPlugin() : null
+                uglify ? uglifyPlugin() : null,
+                filesizePlugin()
             ].filter(n => !!n)
         };
     });
