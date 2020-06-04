@@ -8,8 +8,8 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "rimraf dist && tsc -w",
-    "build": "rimraf dist && tsc",
+    "dev": "../../../node_modules/.bin/rimraf dist && tsc -w",
+    "build": "../../../node_modules/.bin/rimraf dist && tsc",
     "test": "echo \"@nosaid/init is ojbk\" && exit 0"
   },
   "files": [
@@ -37,8 +37,6 @@
   "devDependencies": {
     "@types/fs-extra": "^8.0.1",
     "@types/inquirer": "^6.5.0",
-    "rimraf": "^3.0.1",
     "typescript": "^3.9.3"
-  },
-  "gitHead": "bc6373c173ee07daf0ddd3fe7d82b0745b0762d3"
+  }
 }

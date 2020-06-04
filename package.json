@@ -27,6 +27,7 @@
     "@nosaid/eslint-config-for-typescript": "0.0.7",
     "@nosaid/jest": "0.0.4",
     "lerna": "^3.22.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.9.3"
   }
 }

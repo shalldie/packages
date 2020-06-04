@@ -6,7 +6,7 @@
   "types": "dist/main.d.ts",
   "scripts": {
     "test": "../../../node_modules/.bin/jest",
-    "build": "tsc"
+    "build": "../../../node_modules/.bin/rimraf dist && tsc"
   },
   "files": [
     "dist"
