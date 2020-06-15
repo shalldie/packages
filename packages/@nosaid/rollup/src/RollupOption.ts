@@ -50,7 +50,7 @@ export default class RollupOption {
      * @type {any[]}
      * @memberof RollupOption
      */
-    plugins!: any[];
+    plugins?: any[];
 
     /**
      * 配置开发服务器
