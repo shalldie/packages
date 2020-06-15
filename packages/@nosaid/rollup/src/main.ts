@@ -86,7 +86,8 @@ export function rollupGenerator(options: RollupOption[]) {
                 // 压缩代码
                 uglify ? uglifyPlugin() : null,
                 filesizePlugin(),
-                ...plugins
+                // 自定义插件
+                ...[plugins || []]
             ].filter(n => !!n)
         };
     });
