@@ -1,3 +1,5 @@
+import path from 'path';
+
 import resolvePlugin from '@rollup/plugin-node-resolve';
 import commonjsPlugin from '@rollup/plugin-commonjs';
 import babelPlugin from '@rollup/plugin-babel';
@@ -5,6 +7,7 @@ import jsonPlugin from '@rollup/plugin-json';
 
 import { uglify as uglifyPlugin } from 'rollup-plugin-uglify';
 import servePlugin from 'rollup-plugin-serve';
+import liveloadPlugin from 'rollup-plugin-livereload';
 import filesizePlugin from 'rollup-plugin-filesize';
 
 import { DEFAULT_EXTENSIONS } from '@babel/core';
@@ -44,7 +47,10 @@ export function rollupGenerator(options: RollupOption[]) {
                     minimize: true,
                     plugins: [autoprefixer]
                 }),
+                // dev server
                 serve != null ? servePlugin(serve) : null,
+                // live reload
+                serve != null ? liveloadPlugin(path.dirname(output.file)) : null,
                 // eslint-disable-next-line
                 useTypescript ? require('rollup-plugin-typescript2')(typescript || {}) : null,
                 babelPlugin({
