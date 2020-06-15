@@ -1,19 +1,24 @@
+// system
 import path from 'path';
 
+// 官方插件
 import resolvePlugin from '@rollup/plugin-node-resolve';
 import commonjsPlugin from '@rollup/plugin-commonjs';
 import babelPlugin from '@rollup/plugin-babel';
 import jsonPlugin from '@rollup/plugin-json';
 
+// 社区插件
 import { uglify as uglifyPlugin } from 'rollup-plugin-uglify';
 import servePlugin from 'rollup-plugin-serve';
 import liveloadPlugin from 'rollup-plugin-livereload';
 import filesizePlugin from 'rollup-plugin-filesize';
-
-import { DEFAULT_EXTENSIONS } from '@babel/core';
 import postcssPlugin from 'rollup-plugin-postcss';
+
+// others
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 import autoprefixer from 'autoprefixer';
 
+// self
 import RollupOption from './RollupOption';
 
 /**
