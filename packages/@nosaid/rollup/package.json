@@ -1,6 +1,6 @@
 {
   "name": "@nosaid/rollup",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "bundle for rollup",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
