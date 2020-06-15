@@ -28,6 +28,7 @@ export default rollupGenerator([
             file: 'dist/lib-umd.js', // 产出文件名
             format: 'umd'            // umd 格式
         },
+        plugins: [],                 // 自定义插件
         serve: '',                   // 可选，开发服务器配置： https://www.npmjs.com/package/rollup-plugin-serve
         typescript: {},              // 可选，额外的 typescript 配置： https://www.npmjs.com/package/rollup-plugin-typescript2
         polyfill: false,             // 可选，是否需要 polyfill，默认 false
@@ -46,7 +47,7 @@ export default rollupGenerator([
 {
     "scripts": {
         ...,
-        "dev": "rollup -c -w",
+        "dev": "rollup -cw",
         "build": "rollup -c"
     }
 }

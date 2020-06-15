@@ -45,6 +45,14 @@ export default class RollupOption {
     };
 
     /**
+     * 自定义插件
+     *
+     * @type {any[]}
+     * @memberof RollupOption
+     */
+    plugins!: any[];
+
+    /**
      * 配置开发服务器
      *
      * https://www.npmjs.com/package/rollup-plugin-serve

@@ -24,7 +24,7 @@ import RollupOption from './RollupOption';
  * @returns
  */
 export function rollupGenerator(options: RollupOption[]) {
-    return options.map(({ input, output, serve, typescript, polyfill, uglify, postcssExtract }) => {
+    return options.map(({ input, output, plugins, serve, typescript, polyfill, uglify, postcssExtract }) => {
         const useTypescript = /\.ts$/.test(input);
 
         // serve 的参数需要传入 contentBase
@@ -80,7 +80,8 @@ export function rollupGenerator(options: RollupOption[]) {
                 }),
                 // 压缩代码
                 uglify ? uglifyPlugin() : null,
-                filesizePlugin()
+                filesizePlugin(),
+                ...plugins
             ].filter(n => !!n)
         };
     });
