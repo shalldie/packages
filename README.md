@@ -1,6 +1,6 @@
 # packages
 
-[![Build Status](https://travis-ci.org/shalldie/packages.svg?branch=master)](https://travis-ci.org/shalldie/packages)
+[![Build Status](https://github.com/shalldie/packages/actions/workflows/node.js.yml/badge.svg)](https://github.com/shalldie/packages/actions)
 
 `monorepo`，封装了一系列的便捷工具包。
 
