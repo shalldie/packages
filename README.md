@@ -15,29 +15,29 @@
 <!-- @nosaid/init -->
 
 [init]: packages/@nosaid/init
-[init-icon]: https://img.shields.io/npm/v/@nosaid/init.svg
+[init-icon]: https://img.shields.io/npm/v/@nosaid/init.svg?logo=npm&style=flat-square
 [init-npm]: https://www.npmjs.com/package/@nosaid/init
 
 <!-- @nosaid/eslint-config-for-typescript -->
 
 [eslint]: packages/@nosaid/eslint
-[eslint-icon]: https://img.shields.io/npm/v/@nosaid/eslint-config-for-typescript.svg
+[eslint-icon]: https://img.shields.io/npm/v/@nosaid/eslint-config-for-typescript.svg?logo=npm&style=flat-square
 [eslint-npm]: https://www.npmjs.com/package/@nosaid/eslint-config-for-typescript
 
 <!-- @nosaid/jest -->
 
 [jest]: packages/@nosaid/jest
-[jest-icon]: https://img.shields.io/npm/v/@nosaid/jest.svg
+[jest-icon]: https://img.shields.io/npm/v/@nosaid/jest.svg?logo=npm&style=flat-square
 [jest-npm]: https://www.npmjs.com/package/@nosaid/jest
 
 <!-- @nosaid/rollup -->
 
 [rollup]: packages/@nosaid/rollup
-[rollup-icon]: https://img.shields.io/npm/v/@nosaid/rollup.svg
+[rollup-icon]: https://img.shields.io/npm/v/@nosaid/rollup.svg?logo=npm&style=flat-square
 [rollup-npm]: https://www.npmjs.com/package/@nosaid/rollup
 
 <!-- @nosaid/webpack5 -->
 
 [webpack5]: packages/@nosaid/webpack5
-[webpack5-icon]: https://img.shields.io/npm/v/@nosaid/webpack5.svg
+[webpack5-icon]: https://img.shields.io/npm/v/@nosaid/webpack5.svg?logo=npm&style=flat-square
 [webpack5-npm]: https://www.npmjs.com/package/@nosaid/webpack5
