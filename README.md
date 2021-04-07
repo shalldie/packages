@@ -1,6 +1,6 @@
 # packages
 
-[![Build Status](https://github.com/shalldie/packages/actions/workflows/node.js.yml/badge.svg)](https://github.com/shalldie/packages/actions)
+[![Build Status](https://img.shields.io/github/workflow/status/shalldie/packages/ci?label=build&logo=github&style=flat-square)](https://github.com/shalldie/packages/actions)
 
 `monorepo`，封装了一系列的便捷工具包。
 
